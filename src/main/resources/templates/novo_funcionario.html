@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+
+
+<title>Gerenciamento de Funcionarios</title>
+
+<link rel="stylesheet" 
+href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+crossorigin="anonymous">
+
+</head>
+<body>
+	<div class="container">
+		<h1>Gerencimento de Funcionarios</h1>
+		<hr>
+		<h2>Cadastrar Funcionario</h2>
+
+		<form action="#" th:action="@{/salvarFuncionario}"
+			th:object="${funcionario}" method="post">
+			<tr>
+			<td>Id</td>
+			<td><input type="text" th:field="*{id}" 
+			placeholder="Ex. 01"class="form-control mb-4 col-4"></td> 
+				</tr>
+				<tr>
+				<td>Nome</td>
+				<td><input type="text" th:field="*{nome}" 
+				placeholder="Ex. João"class="form-control mb-4 col-4"></td> 
+				</tr>
+				<tr>
+				<td>CPF</td>
+				<td><input type="text" th:field="*{cpf}" 
+				placeholder="Ex. 123.456.789-00"class="form-control mb-4 col-4"></td> 
+				</tr>
+				<tr>
+				<td>Email</td>
+				<td><input type="text" th:field="*{email}" 
+				placeholder="Ex. anasilva@contato.com.br"class="form-control mb-4 col-4"></td> 
+				</tr>
+				<tr>
+				<td>Telefone</td>
+				<td><input type="text" th:field="*{telefone}" 
+				placeholder="Ex. (11)2222-2222"class="form-control mb-4 col-4"></td>
+				</tr>
+				<tr>
+				<td><button type="submit" class="btn btn-info col-2"> Salvar</button></td>
+				</tr>
+		</form>
+		
+		<hr>
+		
+		<a th:href = "@{/}"> Voltar</a>
+		
+	</div>
+</body>
+</html>
