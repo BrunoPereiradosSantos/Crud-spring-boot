@@ -29,17 +29,17 @@
 				</tr>
 			</thead>
 			<tbody>
+				<tr th:each="funcionario : ${listaFuncionarios}">
+					<td th:text="${funcionario.id}"></td>
+					<td th:text="${funcionario.nome}"></td>
+					<td th:text="${funcionario.cpf}"></td>
+					<td th:text="${funcionario.email}"></td>
+					<td th:text="${funcionario.telefone}"></td>
+					<td><a th:href="@{/mostrarFormUpdate/{id}(id=${funcionario.id})}" class="btn btn-primary">Atualizar</a>
+					<a th:href="@{/deletarFuncionario/{id}(id=${funcionario.id})}" class="btn btn-danger">Deletar</a>
+					</td>
+				</tr>
 			</tbody>
-			<tr th:each="funcionario : ${listaFuncionarios}">
-				<td th:text="${funcionario.id}"></td>
-				<td th:text="${funcionario.nome}"></td>
-				<td th:text="${funcionario.cpf}"></td>
-				<td th:text="${funcionario.email}"></td>
-				<td th:text="${funcionario.telefone}"></td>
-				<td><a th:href="@{/mostrarFormUpdate/{id}(id=${funcionario.id})}" class="btn btn-primary">Atualizar</a>
-				<a th:href="@{/deletarFuncionario/{id}(id=${funcionario.id})}" class="btn btn-danger">Deletar</a>
-				</td>
-			</tr>
 		</table>
 	</div>
 </body>
